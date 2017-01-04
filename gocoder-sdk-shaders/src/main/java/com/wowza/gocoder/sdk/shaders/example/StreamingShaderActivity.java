@@ -1,3 +1,17 @@
+/**
+ *  This is sample code provided by Wowza Media Systems, LLC.  All sample code is intended to be a reference for the
+ *  purpose of educating developers, and is not intended to be used in any production environment.
+ *
+ *  IN NO EVENT SHALL WOWZA MEDIA SYSTEMS, LLC BE LIABLE TO YOU OR ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL,
+ *  OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION,
+ *  EVEN IF WOWZA MEDIA SYSTEMS, LLC HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *  WOWZA MEDIA SYSTEMS, LLC SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ *  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. ALL CODE PROVIDED HEREUNDER IS PROVIDED "AS IS".
+ *  WOWZA MEDIA SYSTEMS, LLC HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+ *
+ */
+
 package com.wowza.gocoder.sdk.shaders.example;
 
 import java.io.File;
@@ -13,11 +27,9 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.androidexperiments.shadercam.example.R;
 import com.androidexperiments.shadercam.fragments.CameraFragment;
 import com.androidexperiments.shadercam.fragments.PermissionsHelper;
 import com.androidexperiments.shadercam.gl.CameraRenderer;
@@ -25,7 +37,6 @@ import com.androidexperiments.shadercam.utils.ShaderUtils;
 
 import com.wowza.gocoder.sdk.api.WowzaGoCoder;
 import com.wowza.gocoder.sdk.api.broadcast.WZBroadcastConfig;
-import com.wowza.gocoder.sdk.api.devices.WZAudioDevice;
 import com.wowza.gocoder.sdk.api.logging.WZLog;
 import com.wowza.gocoder.sdk.api.status.WZState;
 import com.wowza.gocoder.sdk.api.status.WZStatus;
@@ -59,7 +70,7 @@ public class StreamingShaderActivity extends FragmentActivity
     // NOTE: You must update the app specified in gocoder-sdk-shaders/build.gradle
     // and provide a license key corresponding to the app id here
     //
-    private static final String GOCODER_SDK_LICENSE_KEY = "GOSK-XXXX-XXXX-XXXX-XXXX-XXXX";
+    private static final String GOCODER_SDK_LICENSE_KEY = "GOSK-1243-0101-AB5F-A560-6EC5";
     private static WowzaGoCoder sGoCoderSDK = null;
 
     private WZBroadcastConfig mWZBroadcastConfig = null;
@@ -119,7 +130,6 @@ public class StreamingShaderActivity extends FragmentActivity
                 Toast.makeText(this, WowzaGoCoder.getLastError().getErrorDescription(), Toast.LENGTH_LONG).show();
             } else {
                 mWZBroadcastConfig  = new WZBroadcastConfig();
-                //mWZBroadcastConfig.setAudioBroadcaster(new WZAudioDevice());
                 mWZBroadcastConfig.setAudioEnabled(false);
 
                 //

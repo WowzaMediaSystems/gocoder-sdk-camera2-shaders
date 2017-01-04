@@ -19,20 +19,9 @@ The [shadercam-example](https://github.com/googlecreativelab/shadercam/tree/mast
 
 Follow the steps below before attempting to build this app for the first time:
 
-1. Update `gocoder-sdk-shaders/build.gradle` and set the value of the `applicationId` property displayed below to match the app id corresponding to the GoCoder SDK license key you were issued. You can request a trial key using the [GoCoder SDK trial signup form](https://www.wowza.com/products/gocoder/sdk/trial).
+1. Copy the GoCoder SDK aar library file (`com.wowza.gocoder.sdk.aar`) to the `gocoder-sdk-shaders/libs` folder.
 
-```
-applicationId "com.XXX.XXX.XXX.XXX.XXX"
-```
-
-2. Copy the GoCoder SDK aar library file (`com.wowza.gocoder.sdk.aar`) to the `gocoder-sdk-shaders/libs` folder.
-3. Edit the line displayed below from the `StreamingShaderActivity` class to match your GoCoder SDK license key.
-
-```
-private static final String GOCODER_SDK_LICENSE_KEY = "GOSK-XXXX-XXXX-XXXX-XXXX-XXXX";
-```
-
-4. Edit the lines displayed below, also from the `StreamingShaderActivity` class. with the configuration settings specific to your [Wowza Streaming Engine](https://www.wowza.com/products/streaming-engine) installation or [Wowza Cloud](https://www.wowza.com/products/streaming-cloud) account:
+2. Edit the lines displayed below, also from the `StreamingShaderActivity` class. with the configuration settings specific to your [Wowza Streaming Engine](https://www.wowza.com/products/streaming-engine) installation or [Wowza Cloud](https://www.wowza.com/products/streaming-cloud) account:
 
 ```
     mWZBroadcastConfig.setHostAddress("192.168.1.246");
@@ -53,3 +42,6 @@ Wowza Media Systems™ provides developers with a platform to create streaming a
 
 #### Contact
 [Wowza Media Systems, LLC](https://www.wowza.com/contact)
+
+## License
+This code is distributed under the [Wowza Public License](https://github.com/WowzaMediaSystems/gocoder-sdk-camera2-shaders/blob/master/LICENSE).

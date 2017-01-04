@@ -12,11 +12,7 @@ android {
     buildToolsVersion '23.0.3'
 
     defaultConfig {
-        //
-        // NOTE: You must update the value of the applicationId property to match the
-        // app id corresponding to the license key issued
-        //
-        applicationId "com.XXX.XXX.XXX.XXX.XXX"
+        applicationId "com.wowza.gocoder.sdk.shaders.example"
         minSdkVersion 21
         targetSdkVersion 24
         versionCode 3
