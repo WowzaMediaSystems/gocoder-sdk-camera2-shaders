@@ -1,0 +1,1 @@
+include ':shadercam', ':gocoder-sdk-shaders'

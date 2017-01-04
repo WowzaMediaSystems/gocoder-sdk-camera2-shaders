@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wowza.gocoder.sdk.shaders.example.StreamingShaderActivity">
+
+    <com.androidexperiments.shadercam.view.AutoFitTextureView
+        android:id="@+id/texture_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <com.wowza.gocoder.sdk.shaders.example.ImageButtonExt
+            android:id="@+id/btn_swap_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:enabled="false"
+            android:src="@drawable/ic_camera"
+            android:layout_alignParentEnd="true" />
+
+        <com.wowza.gocoder.sdk.shaders.example.ImageButtonExt
+            android:id="@+id/btn_target_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:background="@drawable/round_bg_red"
+            android:src="@android:drawable/ic_media_play"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="false" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sw_target_type"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:showText="false"
+            android:checked="true"
+            android:text="@string/target_stream"
+            android:switchPadding="10dp"
+            android:textAlignment="textEnd"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+    </RelativeLayout>
+
+</RelativeLayout>
