@@ -1,6 +1,8 @@
 This example includes the shadercam library obtained from
 https://github.com/googlecreativelab/shadercam under the
-following license terms...
+following license terms.  The Shadercam library components 
+of this example, and only the Shadercam components of this
+example, are provided with the following notice: 
 
    Copyright 2015 Google Inc.
 
