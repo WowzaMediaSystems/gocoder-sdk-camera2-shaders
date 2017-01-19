@@ -1,4 +1,6 @@
 
+![GoCoder SDK Camera2 Shaders Example](https://raw.githubusercontent.com/WowzaMediaSystems/gocoder-sdk-camera2-shaders/master/gocoder-sdk-shaders/src/main/res/mipmap-xxhdpi/ic_launcher.png)
+
 ### Live streaming with real-time video filters using the Wowza GoCoder SDK™
 
 This sample code is based on Google's [shadercam](https://github.com/googlecreativelab/shadercam) library and extends the [shadercam-example](https://github.com/googlecreativelab/shadercam/tree/master/shadercam-example) app with live streaming support using the [GoCoder SDK](https://www.wowza.com/products/gocoder). The camera preview display is based on Android's [camera2](https://developer.android.com/reference/android/hardware/camera2/package-summary.html) API with real-time filtering using the [OpenGL Shading Language (GLSL)](https://developer.android.com/guide/topics/graphics/opengl.html).
