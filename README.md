@@ -11,7 +11,7 @@ The shadercam-example app was updated to support live streaming by adding a Stre
 
 - [Wowza GoCoder SDK v1.0.1.340](https://www.wowza.com/products/gocoder) or later
 
-     **NOTE:** The GoCoder SDK library necessary to build this app isn't provided with this sample code. To get a free trial of the SDK, complete the **[GoCoder SDK trial sign-up form](https://www.wowza.com/products/gocoder/sdk/trial)** to be sent a link where you can download the SDK along with a free trial license key.
+     **NOTE:** The GoCoder SDK library necessary to build this app isn't provided with this sample code. To get a free trial of the SDK, complete the [GoCoder SDK trial sign-up form](https://www.wowza.com/products/gocoder/sdk/trial) to be sent a link where you can download the SDK along with a free trial license key.
 
 - [Android SDK v4.4.2](https://developer.android.com/studio/index.html) or later.
 - [Android Studio v1.2.0](https://developer.android.com/studio/index.html) or later.
@@ -19,7 +19,7 @@ The shadercam-example app was updated to support live streaming by adding a Stre
 
 ## Build and run the app for the first time
 
-1. Copy the GoCoder SDK aar library file (**com.wowza.gocoder.sdk.aar**) to the **gocoder-sdk-shaders/libs** folder.
+1. Copy the GoCoder SDK **aar** library file (**com.wowza.gocoder.sdk.aar**) to the **gocoder-sdk-shaders/libs** folder.
 
 2. Edit the following code, which is from the **StreamingShaderActivity** class, with the configuration settings used by your Wowza Streaming Engine server or your Wowza Streaming Cloud live stream:
 
