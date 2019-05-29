@@ -23,30 +23,30 @@ import android.opengl.GLES20;
 
 import com.androidexperiments.shadercam.gl.CameraRenderer;
 
-import com.wowza.gocoder.sdk.api.android.opengl.WZGLES;
-import com.wowza.gocoder.sdk.api.broadcast.WZBroadcast;
-import com.wowza.gocoder.sdk.api.broadcast.WZBroadcastConfig;
-import com.wowza.gocoder.sdk.api.broadcast.WZGLBroadcaster;
-import com.wowza.gocoder.sdk.api.geometry.WZSize;
-import com.wowza.gocoder.sdk.api.render.WZRenderAPI;
-import com.wowza.gocoder.sdk.api.status.WZStatusCallback;
+import com.wowza.gocoder.sdk.api.android.opengl.WOWZGLES;
+import com.wowza.gocoder.sdk.api.broadcast.WOWZBroadcast;
+import com.wowza.gocoder.sdk.api.broadcast.WOWZBroadcastConfig;
+import com.wowza.gocoder.sdk.api.broadcast.WOWZGLBroadcaster;
+import com.wowza.gocoder.sdk.api.geometry.WOWZSize;
+import com.wowza.gocoder.sdk.api.render.WOWZRenderAPI;
+import com.wowza.gocoder.sdk.api.status.WOWZStatusCallback;
 
 /**
  * Example renderer that changes colors and tones of camera feed
  * based on touch position.
  */
 public class StreamingRenderer extends CameraRenderer
-    implements WZRenderAPI.VideoFrameRenderer
+    implements WOWZRenderAPI.VideoFrameRenderer
 {
     private static final String TAG = StreamingRenderer.class.getSimpleName();
 
     /**
      * Wowza GoCoder SDK broadcaster and it's configuration properties
      */
-    private WZBroadcast mWZBroadcast = null;
-    private WZBroadcastConfig mWZBroadcastConfig = null;
-    private WZSize mFrameSize = null;
-    private WZGLBroadcaster mGLBroadcaster = null;
+    private WOWZBroadcast mWZBroadcast = null;
+    private WOWZBroadcastConfig mWZBroadcastConfig = null;
+    private WOWZSize mFrameSize = null;
+    private WOWZGLBroadcaster mGLBroadcaster = null;
 
     private float offsetR = 0.5f;
     private float offsetG = 0.5f;
@@ -62,13 +62,13 @@ public class StreamingRenderer extends CameraRenderer
     {
         super(context, previewSurface, width, height, "touchcolor.frag.glsl", "touchcolor.vert.glsl");
 
-        mGLBroadcaster = new WZGLBroadcaster(EGL14.eglGetCurrentContext());
+        mGLBroadcaster = new WOWZGLBroadcaster(EGL14.eglGetCurrentContext());
         mGLBroadcaster.setVideoFrameRenderer(this);
 
-        mWZBroadcast = new WZBroadcast();
-        mWZBroadcastConfig = new WZBroadcastConfig();
+        mWZBroadcast = new WOWZBroadcast();
+        mWZBroadcastConfig = new WOWZBroadcastConfig();
 
-        mFrameSize = new WZSize(width, height); // invert since this app always runs in portrait
+        mFrameSize = new WOWZSize(width, height); // invert since this app always runs in portrait
     }
 
     /**
@@ -107,8 +107,8 @@ public class StreamingRenderer extends CameraRenderer
         return !mGLBroadcaster.getBroadcasterStatus().isIdle();
     }
 
-    public void startStreaming(final WZBroadcastConfig broadcastConfig,
-                               final WZStatusCallback statusCallback) {
+    public void startStreaming(final WOWZBroadcastConfig broadcastConfig,
+                               final WOWZStatusCallback statusCallback) {
 
         mWZBroadcastConfig.set(broadcastConfig);
 
@@ -131,7 +131,7 @@ public class StreamingRenderer extends CameraRenderer
         });
     }
 
-    public void stopStreaming(final WZStatusCallback statusCallback) {
+    public void stopStreaming(final WOWZStatusCallback statusCallback) {
         mWZBroadcast.endBroadcast(statusCallback);
     }
 
@@ -156,20 +156,20 @@ public class StreamingRenderer extends CameraRenderer
      * Called at the beginning of a broadcast
      */
     @Override
-    public void onWZVideoFrameRendererInit(WZGLES.EglEnv eglEnv) {
+    public void onWZVideoFrameRendererInit(WOWZGLES.EglEnv eglEnv) {
         // nothing to do here
     }
 
     /**
-     * The callback invoked in response to an call to {@link WZGLBroadcaster#onFrameAvailable(long)} to render
+     * The callback invoked in response to an call to {@link WOWZGLBroadcaster#onFrameAvailable(long)} to render
      * the frame to be encoded
-     * @param eglEnv The {@link com.wowza.gocoder.sdk.api.android.opengl.WZGLES.EglEnv} instance describing the OpenGL ES environment used
+     * @param eglEnv The {@link com.wowza.gocoder.sdk.api.android.opengl.WOWZGLES.EglEnv} instance describing the OpenGL ES environment used
      *               to encode the video frames for streaming
      * @param frameSize The broadcast video frame size which will remain constant throughout a streaming session
      * @param frameRotation The video source's current orientation as set by a call to {@link WZGLBroadcaster#setFrameRotation(int)}
      */
     @Override
-    public void onWZVideoFrameRendererDraw(WZGLES.EglEnv eglEnv, WZSize frameSize, int frameRotation) {
+    public void onWZVideoFrameRendererDraw(WOWZGLES.EglEnv eglEnv, WOWZSize frameSize, int frameRotation) {
         // set the viewport to the broadcast stream's frame size and render
         setViewport(frameSize.getWidth(), frameSize.getHeight());
         draw();
@@ -179,7 +179,7 @@ public class StreamingRenderer extends CameraRenderer
      * Called at the end of a broadcast
      */
     @Override
-    public void onWZVideoFrameRendererRelease(WZGLES.EglEnv eglEnv) {
+    public void onWZVideoFrameRendererRelease(WOWZGLES.EglEnv eglEnv) {
         // nothing to do here
     }
 

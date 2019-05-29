@@ -36,11 +36,12 @@ import com.androidexperiments.shadercam.gl.CameraRenderer;
 import com.androidexperiments.shadercam.utils.ShaderUtils;
 
 import com.wowza.gocoder.sdk.api.WowzaGoCoder;
-import com.wowza.gocoder.sdk.api.broadcast.WZBroadcastConfig;
-import com.wowza.gocoder.sdk.api.logging.WZLog;
-import com.wowza.gocoder.sdk.api.status.WZState;
-import com.wowza.gocoder.sdk.api.status.WZStatus;
-import com.wowza.gocoder.sdk.api.status.WZStatusCallback;
+
+import com.wowza.gocoder.sdk.api.broadcast.WOWZBroadcastConfig;
+import com.wowza.gocoder.sdk.api.logging.WOWZLog;
+import com.wowza.gocoder.sdk.api.status.WOWZState;
+import com.wowza.gocoder.sdk.api.status.WOWZStatus;
+import com.wowza.gocoder.sdk.api.status.WOWZStatusCallback;
 
 import com.wowza.gocoder.sdk.shaders.example.gl.StreamingRenderer;
 
@@ -57,7 +58,7 @@ import butterknife.OnClick;
 public class StreamingShaderActivity extends FragmentActivity
         implements  CameraRenderer.OnRendererReadyListener,
                     PermissionsHelper.PermissionsListener,
-                    WZStatusCallback
+                    WOWZStatusCallback
 {
     private static final String TAG = StreamingShaderActivity.class.getSimpleName();
     private static final String TAG_CAMERA_FRAGMENT = "tag_camera_frag";
@@ -73,7 +74,7 @@ public class StreamingShaderActivity extends FragmentActivity
     private static final String GOCODER_SDK_LICENSE_KEY = "GOSK-1243-0101-AB5F-A560-6EC5";
     private static WowzaGoCoder sGoCoderSDK = null;
 
-    private WZBroadcastConfig mWZBroadcastConfig = null;
+    private WOWZBroadcastConfig mWZBroadcastConfig = null;
 
     /**
      * filename for our test video output
@@ -119,18 +120,18 @@ public class StreamingShaderActivity extends FragmentActivity
         setupInteraction();
 
         // Enable detailed logging from the GoCoder SDK
-        WZLog.LOGGING_ENABLED = true;
+        WOWZLog.LOGGING_ENABLED = true;
 
         // Initialize the GoCoder SDK
         if (sGoCoderSDK == null) {
             sGoCoderSDK = WowzaGoCoder.init(this, GOCODER_SDK_LICENSE_KEY);
 
             if (sGoCoderSDK == null) {
-                WZLog.error(TAG, WowzaGoCoder.getLastError());
+                WOWZLog.error(TAG, WowzaGoCoder.getLastError());
                 Toast.makeText(this, WowzaGoCoder.getLastError().getErrorDescription(), Toast.LENGTH_LONG).show();
             } else {
-                mWZBroadcastConfig  = new WZBroadcastConfig();
-                mWZBroadcastConfig.setAudioEnabled(false);
+                mWZBroadcastConfig  = new WOWZBroadcastConfig();
+                mWZBroadcastConfig.setAudioEnabled(true);
 
                 //
                 // NOTE: Provide your specific WSE server settings here
@@ -255,22 +256,22 @@ public class StreamingShaderActivity extends FragmentActivity
         super.onPause();
 
         if (mRenderer != null && mRenderer.isStreaming()) {
-            final WZStatus streamStatus = new WZStatus(WZState.STOPPING);
+            final WOWZStatus streamStatus = new WOWZStatus(WOWZState.STOPPING);
 
-            mRenderer.stopStreaming(new WZStatusCallback() {
+            mRenderer.stopStreaming(new WOWZStatusCallback() {
                 @Override
-                public void onWZStatus(WZStatus wzStatus) {
+                public void onWZStatus(WOWZStatus wzStatus) {
                     if (wzStatus.isIdle())
                         streamStatus.setState(wzStatus.getState());
                 }
 
                 @Override
-                public void onWZError(WZStatus wzStatus) {
+                public void onWZError(WOWZStatus wzStatus) {
 
                 }
             });
 
-            streamStatus.waitForState(WZState.IDLE);
+            streamStatus.waitForState(WOWZState.IDLE);
         }
 
         shutdownCamera(false);
@@ -442,7 +443,7 @@ public class StreamingShaderActivity extends FragmentActivity
     };
 
     @Override
-    public void onWZStatus(final WZStatus wzStatus) {
+    public void onWZStatus(final WOWZStatus wzStatus) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -461,7 +462,7 @@ public class StreamingShaderActivity extends FragmentActivity
     }
 
     @Override
-    public void onWZError(final WZStatus wzStatus) {
+    public void onWZError(final WOWZStatus wzStatus) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
