@@ -9,12 +9,12 @@ The shadercam example app was updated to support live streaming by adding a **St
 
 ## Prerequisites
 
-- [Wowza GoCoder SDK v1.5.0](https://www.wowza.com/products/gocoder) or later
+- [Wowza GoCoder SDK for Android v1.8.0.0463](https://www.wowza.com/products/gocoder) or later
 
      **NOTE:** The GoCoder SDK library necessary to build this app isn't provided with this sample code. To get the latest version of the free SDK, go to the [GoCoder SDK download page](https://www.wowza.com/pricing/installer#gocodersdk-downloads).
 
 - [Android 5.0](https://developer.android.com/studio/index.html) (API level 21) or later for broadcasting and Android 6.0 (API level 23) or later for playback.
-- [Android Studio v1.2.0](https://developer.android.com/studio/index.html) or later.
+- [Android Studio v3.4.0](https://developer.android.com/studio/index.html) or later.
 - A [Wowza Streaming Engine](https://www.wowza.com/products/streaming-engine)™ media server license or a [Wowza Streaming Cloud](https://www.wowza.com/products/streaming-cloud)™ subscription. You can request a Wowza Streaming Engine trial by completing the [Wowza Streaming Engine trial sign-up form](https://www.wowza.com/pricing/trial) or sign up for a Wowza Streaming Cloud trial by completing the [Wowza Streaming Cloud trial sig-nup form](https://www.wowza.com/pricing/cloud-free-trial).
 
 ## Build and run the app for the first time
