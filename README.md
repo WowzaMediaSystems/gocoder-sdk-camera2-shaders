@@ -3,6 +3,8 @@
 
 ## Live stream with real-time video filters using the Wowza GoCoder SDK
 
+**Wowza Player, Wowza GoCoder SDK, and the technology powering the Ultra Low Latency (ULL) service in Wowza Streaming Cloud will no longer be available on January 5, 2021. [Learn more](https://info.wowza.com/product-notification-april-2020).**
+
 This sample code is based on Google's [shadercam](https://github.com/googlecreativelab/shadercam) library and extends the [shadercam-example](https://github.com/googlecreativelab/shadercam/tree/master/shadercam-example) app with live streaming support using the [Wowza GoCoder™ SDK](https://www.wowza.com/products/gocoder). The camera preview display is based on Android's [camera2](https://developer.android.com/reference/android/hardware/camera2/package-summary.html) API with real-time filtering using the [OpenGL Shading Language (GLSL)](https://developer.android.com/guide/topics/graphics/opengl.html).
 
 The shadercam example app was updated to support live streaming by adding a **StreamingRenderer** class that uses the **WOWZGLBroadcaster** API class and the **WOWZRenderAPI.VideoFrameRenderer** interface in the GoCoder SDK to encode each frame for the video stream while a live broadcast is active.
