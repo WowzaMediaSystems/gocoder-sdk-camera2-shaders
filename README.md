@@ -1,5 +1,5 @@
 
-![GoCoder SDK Camera2 Shaders Example](https://raw.githubusercontent.com/WowzaMediaSystems/gocoder-sdk-camera2-shaders/master/gocoder-sdk-shaders/src/main/res/mipmap-xxhdpi/ic_launcher.png)
+![GoCoder SDK Camera2 Shaders Example](/shadercam/src/main/res/mipmap-xxhdpi/ic_launcher.png)
 
 ## Live stream with real-time video filters using the Wowza GoCoder SDK
 
@@ -40,10 +40,10 @@ The shadercam example app was updated to support live streaming by adding a **St
 * [Wowza GoCoder SDK for Android release notes](https://www.wowza.com/docs/wowza-gocoder-sdk-release-notes-for-android)
 * [Wowza GoCoder SDK community forum](https://www.wowza.com/community/spaces/36/wowza-gocoder-sdk.html)
 
-Wowza Media Systems™ provides developers with a platform to create streaming applications and solutions. See [Wowza Developer Tools](https://www.wowza.com/resources/developers) to learn more about our APIs and SDKs.
+Wowza Media Systems™ provides developers with a platform to create streaming applications and solutions. See [Wowza Developer Tools](https://www.wowza.com/developer) to learn more about our APIs and SDKs.
 
 ## Contact
 [Wowza Media Systems, LLC](https://www.wowza.com/contact)
 
 ## License
-This code is distributed under the [Wowza Public License](https://github.com/WowzaMediaSystems/gocoder-sdk-camera2-shaders/blob/master/LICENSE).
+This code is distributed under the [Wowza Public License](/LICENSE).
